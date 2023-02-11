@@ -12,7 +12,7 @@ function collapse(tree: any, prefix: string = ''): string {
     let res = '';
 
     for(const el of Object.keys(tree)) {
-        if(typeof tree[el] === 'object'){
+        if(typeof tree[el] === 'object' && tree[el] !== null){
             const currentRes = collapse(tree[el], `${prefix}${el}.`);
             res += currentRes;
         } else if(el === '') {
