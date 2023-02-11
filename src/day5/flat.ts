@@ -11,7 +11,6 @@ function flat(arr: any[], depth: number = 1) {
              if(!Array.isArray(el) || depth <= 0) {
                  res.push(el);
              } else {
-
                  stack.push([depth, iter]);
                  // @ts-ignore
                  stack.push([depth - 1, el[Symbol.iterator]()]);
